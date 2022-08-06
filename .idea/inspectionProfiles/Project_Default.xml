@@ -1,0 +1,39 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="href" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="16">
+            <item index="0" class="java.lang.String" itemvalue="astroid" />
+            <item index="1" class="java.lang.String" itemvalue="psycopg2-binary" />
+            <item index="2" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="3" class="java.lang.String" itemvalue="mysqlclient" />
+            <item index="4" class="java.lang.String" itemvalue="boto3" />
+            <item index="5" class="java.lang.String" itemvalue="google-auth-oauthlib" />
+            <item index="6" class="java.lang.String" itemvalue="Django" />
+            <item index="7" class="java.lang.String" itemvalue="google-auth-httplib2" />
+            <item index="8" class="java.lang.String" itemvalue="uWSGI" />
+            <item index="9" class="java.lang.String" itemvalue="google-api-python-client" />
+            <item index="10" class="java.lang.String" itemvalue="Pillow" />
+            <item index="11" class="java.lang.String" itemvalue="PyYAML" />
+            <item index="12" class="java.lang.String" itemvalue="xhtml2pdf" />
+            <item index="13" class="java.lang.String" itemvalue="reportlab" />
+            <item index="14" class="java.lang.String" itemvalue="django-crontab" />
+            <item index="15" class="java.lang.String" itemvalue="celery" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

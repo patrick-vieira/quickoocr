@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+    command: >
+      sh -c "pip freeze &&
+             python manage.py runserver 0.0.0.0:8100"
+    volumes:
+      - ./src:/src
+      - ./data/web:/vol/web
+    ports:
+      - 8100:8100
+      - 5678:5678

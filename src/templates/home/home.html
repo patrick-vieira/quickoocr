@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container fluid">
+    <div class="row">
+        <h1>HTML5 paste image to page</h1>
+    </div>
+
+
+    <div class="row">
+        <div class="column col-md-8">
+            <div class="span4 target"></div>
+        </div>
+        <div class="column col-md-1">
+            <form id="form"
+                  hx-post="{% url 'read'%}"
+                  hx-target='#read-result'>
+
+                <button id="read" class="btn btn-success form-control" type="submit"> >> </button>
+            </form>
+        </div>
+        <div class="column col-md-3">
+            <div id="read-result"></div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="span4 target"></div>
+    </div>
+
+    <div class="span12">
+        <br/>
+
+        <div class="input-prepend">
+            <span class="add-on">size</span>
+            <input class="span2 size" id="size" type="text" placeholder="size of pasted image">
+        </div>
+
+        <div class="input-prepend">
+            <span class="add-on">type</span>
+            <input class="span2 type" id="type" type="text" placeholder="Image type pasted">
+        </div>
+
+        <div class="input-prepend">
+            <span class="add-on">width</span>
+            <input class="span2 type" id="width" type="text" placeholder="Width">
+        </div>
+
+        <div class="input-prepend">
+            <span class="add-on">height</span>
+            <input class="span2 type" id="height" type="text" placeholder="Height">
+        </div>
+    </div>
+    <div class="span12">
+        <legend>The dataURL of the image <a href="#" onclick="copy()">copy to clipboard</a>. Copy as <a href="#"
+                                                                                                        onclick="copyMDImage()"
+                                                                                                        class="new">Markdown
+            image link</a></legend>
+        <textarea id="base64" cols="30" rows="10" class="data span12"></textarea>
+        <textarea style="position: absolute; top: 10px;z-index: 1000; left: -10000px;" id="base64MD" cols="30"
+                          rows="10"></textarea>
+    </div>
+</div>
+
+</div>
+
+<script>
+</script>
+
+{% endblock content %}
