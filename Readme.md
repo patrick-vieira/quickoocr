@@ -4,6 +4,9 @@
 
 
 
+### Criando o superuser
+     docker-compose -f docker-compose.yaml run --rm app sh -c "python manage.py createsuperuser"
+
 ### Criando o primeiro app
     docker-compose -f docker-compose.yaml run --rm app sh -c "python manage.py startapp reader"
 

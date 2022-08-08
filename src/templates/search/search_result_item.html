@@ -1,0 +1,13 @@
+<div class="row">
+
+    <div class="card mb-3">
+        <a href="{{ parsed_image.image.url }}" target="_blank">
+        <img class="card-img-top" src="{{ parsed_image.image.url }}" alt="Card image cap">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">{{parsed_image.details}}</h5>
+            <p class="card-text">{{parsed_image.text}}</p>
+            <p class="card-text"><small class="text-muted">{{parsed_image.folder}}</small></p>
+        </div>
+    </div>
+</div>

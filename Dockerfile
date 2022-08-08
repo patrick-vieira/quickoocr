@@ -5,6 +5,7 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /requirements.txt
 COPY ./src /src
+COPY ./traineddata /traineddata
 
 WORKDIR /src
 

@@ -5,71 +5,81 @@
 
 <div class="container fluid">
     <div class="row">
-        <h1>HTML5 paste image to page</h1>
+        <h1>Quick OCR</h1>
     </div>
 
 
     <div class="column">
         <div class="row">
-            <div class="span4 target"></div>
+            <div id="to-read" class="span4 target active"></div>
         </div>
         <br>
         <div class="row">
-            <form id="form"
+            <form id="form-read"
                   hx-post="{% url 'read'%}"
                   hx-target='#read-result'>
-                <textarea name="base64" id="base64" cols="30" rows="10" class="data span12" style="position: absolute; top: 10px;z-index: 1000; left: -10000px;" ></textarea>
-                <textarea style="position: absolute; top: 10px;z-index: 1000; left: -10000px;" name="base64MD"  id="base64MD" cols="30"
-                          rows="10"></textarea>
-                <button id="read" class="btn btn-success form-control" type="submit"> Read Image Text</button>
+                <textarea name="read_image" id="read_image" cols="30" rows="2" class="hidden_text" style=""></textarea>
+
+                <button class="btn btn-success form-control" type="submit"> Read Image Text</button>
             </form>
         </div>
     </div>
     <br>
 
-    <div id="read-result" class="row"></div>
+
+    <br>
+    <div class="row">
+        <form id="form-save"
+              hx-post="{% url 'save'%}"
+              hx-target='#save-result'>
+            <div id="read-result" class="row"></div>
+            <textarea name="save_image" id="save_image" cols="30" rows="2" class="hidden_text" style=""></textarea>
+            <br>
+            <select class="form-select" aria-label="Default select example" name="folder" placeholder="Pasta">
+                <option selected>Pasta</option>
+                <option value="TSC1">TSC1</option>
+                <option value="TSC2">TSC2</option>
+                <option value="TSC3">TSC3</option>
+                <option value="TSC4">TSC4</option>
+                <option value="TSC5">TSC5</option>
+                <option value="P1">P1</option>
+            </select>
+            <br>
+            <input class="form-control type" name="details" type="text" placeholder="Detalhes">
+            <br>
+            <button class="btn btn-success form-control" type="submit" data-bs-toggle="modal" data-bs-target="#resultModal"> Save Image and Text</button>
+            <br>
+            <div class="row">
+                <div id="to-save" class="save_target target"></div>
+            </div>
+        </form>
+    </div>
 
     <br>
 
-    <div class="row">
-        <div class="span4 target"></div>
-    </div>
 
-
-    <div class="span12">
-        <br/>
-        <div class="input-prepend">
-            <span class="add-on">size</span>
-            <input class="span2 size" id="size" type="text" placeholder="size of pasted image">
-        </div>
-
-        <div class="input-prepend">
-            <span class="add-on">type</span>
-            <input class="span2 type" id="type" type="text" placeholder="Image type pasted">
-        </div>
-
-        <div class="input-prepend">
-            <span class="add-on">width</span>
-            <input class="span2 type" id="width" type="text" placeholder="Width">
-        </div>
-
-        <div class="input-prepend">
-            <span class="add-on">height</span>
-            <input class="span2 type" id="height" type="text" placeholder="Height">
-        </div>
-    </div>
-    <div class="span12">
-        <legend>The dataURL of the image <a href="#" onclick="copy()">copy to clipboard</a>. Copy as <a href="#"
-                                                                                                        onclick="copyMDImage()"
-                                                                                                        class="new">Markdown
-            image link</a></legend>
-
-    </div>
-</div>
+    <br>
+    <br>
+    <br>
+    <br>
 
 </div>
 
-<script>
-</script>
-
+<!-- Modal -->
+<div class="modal fade" id="resultModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Imagem salva</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="save-result" class="row"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}

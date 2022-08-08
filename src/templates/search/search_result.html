@@ -1,0 +1,10 @@
+<div id="product-inventory-list">
+    <div class="container">
+        <div id="result_list" class="column">
+            {% for parsed_image in parsed_images %}
+                <br>
+                {% include 'search/search_result_item.html'%}
+            {% endfor %}
+        </div>
+    </div>
+</div>

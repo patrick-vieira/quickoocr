@@ -6,10 +6,14 @@ services:
       context: .
     command: >
       sh -c "pip freeze &&
+             echo $TESSDATA_PREFIX
              python manage.py runserver 0.0.0.0:8100"
     volumes:
       - ./src:/src
       - ./data/web:/vol/web
+      - ./traineddata:/traineddata
     ports:
       - 8100:8100
       - 5678:5678
+    environment:
+      - TESSDATA_PREFIX=${TESSDATA_PREFIX}

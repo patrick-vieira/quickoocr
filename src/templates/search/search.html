@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+
+<div class="" id="navbarNav">
+    <div class="col">
+        <form id="form-filter"
+              method="GET"
+              class="form-floating row "
+              hx-post="{% url 'search'%}"
+              hx-target='#result_list'>
+            <div class="col">
+                <input type="text" class="form-control" id="form-filter-search" name="search"
+                       placeholder="Palavas separadas por virgula">
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+<br>
+
+{% include 'search/search_result.html'%}
+
+{% endblock content %}
